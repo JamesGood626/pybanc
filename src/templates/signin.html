@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<title>Hello from Flask</title>
+<h1>Just click it to create your account...</h1>
+{% if error %}
+<p>{{ error }}</p>
+{% endif %}
+<form method="post" action="/signin">
+  <label for="acc_num">Account Number</label>
+  <input id="acc_num" name="acc_num" />
+  <button>Submit</button>
+</form>

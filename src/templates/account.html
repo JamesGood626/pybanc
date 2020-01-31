@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<title>Hello from Flask</title>
+{% if acc_num %}
+<h1>Hello {{ acc_num }}!</h1>
+<h2>Your balance is: {{ balance }}</h2>
+{% else %}
+<h1>Ahh shoot...</h1>
+{% endif %}
+<form method="post" action="/deposit">
+  <label for="deposit">deposit</label>
+  <input id="deposit" name="amount" />
+  <button>Submit</button>
+</form>
+
+{% if withdraw_error %}
+<h1>{{ withdraw_error }}!</h1>
+{% endif %}
+<form method="post" action="/withdraw">
+  <label for="withdraw">withdraw</label>
+  <input id="withdraw" name="amount" />
+  <button>Submit</button>
+</form>
+
+{% if transfer_error %}
+<h1>{{ transfer_error }}!</h1>
+{% endif %}
+<form method="post" action="/transfer">
+  <label for="target_account">Target Account</label>
+  <input id="target_account" name="target_account" />
+  <label for="amount">amount</label>
+  <input id="amount" name="amount" />
+  <button>Submit</button>
+</form>
